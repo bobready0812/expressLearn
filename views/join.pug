@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title registration
+  link(rel='stylesheet' href='registration.css')
+.container
+  .title
+    h3 registration
+  .inputGroup
+  form(method="POST")
+    input.email(name="email" type='text' placeholder='E-Mail')
+    input.name(name="name" required='' maxlength='12' type='text' placeholder='Name')
+    input.password(name="password" type='password' placeholder='Password')
+    input.confirmPassword(type='password' placeholder='Confirm Password')
+    .btnGroup
+      button.crtBtn Create Account
+      button.aldBtn Aleady have Account?
+script(src='registration.js')

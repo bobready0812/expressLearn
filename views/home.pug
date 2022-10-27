@@ -1,9 +1,8 @@
-doctype html
-html
-    head
-        title Wetube
-    body
-        main
-            block content
-        footer
-            span &copy: WeTube
+extends base.pug
+
+
+block content 
+   each user in users 
+      p=user.name
+   else
+      li Sorry nothing found
