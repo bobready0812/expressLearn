@@ -1,16 +1,12 @@
 const express = require("express");
 const app = express();
-const port = 5000;
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/Express",{useNewUrlParser:true});
+const mongoose = require('mongoose');
+const url = 'mongodb+srv://sidae9988:tldnjs99^^@cluster1.9kefxyc.mongodb.net/?retryWrites=true&w=majority'
 
-const db = mongoose.connection;
+mongoose.connect(url).then(() => console.log("DB connected"));
 
-const handleOpen = () => console.log("Connected to DB");
+app.get('/', (req,res) => {res.send("HI")});
 
-db.on("error", (error) => console.log("DB Error", error));
-db.once("open", handleOpen);
-
-app.get('/',(req,res) => res.send("Hello world!"));
-
-app.listen(port, () => console.log(`Example app listening on port ${port}`));  
+app.listen(5000, (req,res) => {
+    console.log("Server on");
+})
