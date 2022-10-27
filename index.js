@@ -5,7 +5,9 @@ const url = 'mongodb+srv://sidae9988:tldnjs99^^@cluster1.9kefxyc.mongodb.net/?re
 
 mongoose.connect(url).then(() => console.log("DB connected"));
 
-app.get('/', (req,res) => {res.send("HI")});
+app.get('/', (req,res) => {res.render("home")});
+app.set("view engine", "pug");
+app.set("views", process.cwd() + '/views');
 
 app.listen(5000, (req,res) => {
     console.log("Server on");
